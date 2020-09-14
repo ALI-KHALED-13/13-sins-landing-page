@@ -71,7 +71,7 @@ function mark () {
     let avrgHeights = Array.from(sections).reduce((av, el)=> av + el.offsetHeight, 0) / sections.length;
     console.log(avrgHeights);
     let active = Array.from(sections).find(el=> {
-        return el.getBoundingClientRect().top > 0 && window.pageYOffset - (el.offsetTop - avrgHeights * 1.35) > 0;
+        return el.getBoundingClientRect().top > 20 && window.pageYOffset - (el.offsetTop - avrgHeights * 1.35) > 0;
     })
     const prev = document.getElementsByClassName('activeSection');
     if (active) {
