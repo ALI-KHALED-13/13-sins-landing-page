@@ -76,13 +76,11 @@ function mark () {
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
             vid.play();
-            vid.muted = false;
-            if (!vid.played.length){
-                vid.onended =()=> {
-                    vid.muted = true;
-                    vid.loop = true;
-                }
-            }
+            vid.onended =()=> {
+                vid.volume = 0.05;
+                vid.play();
+                vid.loop = true;
+        }
         }
         while (prev.length) {
             prev[0].classList.remove('activeSection');
@@ -92,5 +90,3 @@ function mark () {
         while (prev.length) prev[0].classList.remove('activeSection');
     }
 }
-
-//the correct
