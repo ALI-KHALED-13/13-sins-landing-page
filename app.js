@@ -60,6 +60,7 @@ function popup() {
 }
 
 function mark () {
+    const vid = document.getElementsByClassName('vid')[0];
     const sections = document.getElementsByTagName('section');
     let minHeight = Math.min(...Array.from(sections).map(el=> el.offsetHeight));
 
@@ -73,16 +74,15 @@ function mark () {
     if (active.length) {
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
-            const vid = document.getElementsByClassName('vid')[0];
+            vid.muted = false;
             vid.play();
-            if (!vid.played.length){
-                vid.muted = false;
+            /*if (!vid.played.length){
                 vid.onended =()=> {
                     vid.muted = true;
                     vid.play();
                     vid.loop = true;
                 }
-           }
+           }*/
         }
         while (prev.length) {
             prev[0].classList.remove('activeSection');
