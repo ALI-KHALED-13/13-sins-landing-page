@@ -60,6 +60,7 @@ function popup() {
 }
 
 function mark () {
+    const vid = document.getElementsByClassName('vid')[0];
     const sections = document.getElementsByTagName('section');
     let minHeight = Math.min(...Array.from(sections).map(el=> el.offsetHeight));
 
@@ -72,9 +73,9 @@ function mark () {
 
 
     if (active.length) {
-        const vid = document.getElementsByClassName('vid')[0];
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
+            vid.muted = false;
             vid.play();
             vid.onended =()=> {
                 vid.muted = true;
