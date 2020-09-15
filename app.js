@@ -90,3 +90,5 @@ function mark () {
         while (prev.length) prev[0].classList.remove('activeSection');
     }
 }
+
+//the correct
