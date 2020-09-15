@@ -78,7 +78,7 @@ function mark () {
             vid.play();
             vid.muted = false;
             vid.onended =()=> {
-                vid.volume = 0.05;
+                vid.volume = 0.01;
                 vid.play();
                 vid.loop = true;
             }
