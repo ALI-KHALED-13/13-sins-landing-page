@@ -76,6 +76,7 @@ function mark () {
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
             vid.play();
+            vid.muted = false;
             if (!vid.played.length){
                 vid.onended =()=> {
                     vid.muted = true;
