@@ -4,6 +4,7 @@ let header = document.getElementsByTagName('header')[0];
 window.onload =()=> {
     document.getElementById('preloading').remove();
     popup();
+    window.onscroll =()=> popup();
 };
 
 setInterval(hideNav, 200);
@@ -55,7 +56,6 @@ function popup() {
     }
 
     mark();
-    window.addEventListener('scroll', popup);
     
 }
 
