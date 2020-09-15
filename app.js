@@ -68,12 +68,13 @@ function popup() {
 
 function mark () {
     const sections = document.getElementsByTagName('section');
-    let avrgHeights = Array.from(sections).reduce((av, el)=> av + el.offsetHeight, 0) / sections.length;
-    console.log(avrgHeights);
+    let minHeight = Math.min(...Array.from(sections).map(el=> el.offsetHeight));
+
     let active = Array.from(sections).find(el=> {
-        return el.getBoundingClientRect().top > 20 && window.pageYOffset - (el.offsetTop - avrgHeights * 1.35) > 0;
+        return el.getBoundingClientRect().top > -el.offsetHeight / 3 && window.pageYOffset - (el.offsetTop - minHeight * 1.31) > 0;
     })
     const prev = document.getElementsByClassName('activeSection');
+
     if (active) {
         if (active === prev[0]) return;
         while (prev.length) prev[0].classList.remove('activeSection');
