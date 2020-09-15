@@ -26,7 +26,7 @@ after the loop ends, the virtual dom we created holds every dynamically created 
 2. `popup()` function: 
 it might appear as a small one with a small mission (which is poping up the to-top button when the page is scrolled down)
 but it has many trickpoints: 
-  1. it's called immediatly when the whole documented is loaded (via `window.onload` event), however it adds another event to the window in its body function calling itself (recursion) but this time the event fires when scrolling occurs.
+  1. it's called immediatly when the whole documented is loaded (via `window.onload` event), to handle the case if the page is already scrolled down from a previous visit (onscroll event isn't fired)
   2. it's invoked when the page scrolled checking every time the coordinates to decide whether or not to show the top up button and to call the function `mark()` any way that checks what section is active and darken it (as a sign of focus).
   
 #### you can visit the website via this link [https://ali-khaled-13.github.io/13-sins-landing-page/]
