@@ -80,7 +80,6 @@ function mark () {
             if (!vid.played.length){
                 vid.onended =()=> {
                     vid.muted = true;
-                    vid.play();
                     vid.loop = true;
                 }
             }
