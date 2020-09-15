@@ -70,8 +70,8 @@ function mark () {
     const sections = document.getElementsByTagName('section');
     let minHeight = Math.min(...Array.from(sections).map(el=> el.offsetHeight));
 
-    let active = Array.from(sections).find(el=> {
-        const factor = (document.documentElement.offsetWidth < 600 ? 1.8 : 0.9);
+    let active = Array.from(sections).filter(el=> {
+        const factor = (document.documentElement.offsetWidth < 600 ? 1.9 : 0.9);
         
         return el.getBoundingClientRect().top > -el.offsetHeight / 3 && 
         window.pageYOffset- (el.offsetTop - minHeight  * factor ) > 0;
@@ -79,10 +79,10 @@ function mark () {
     const prev = document.getElementsByClassName('activeSection');
 
 
-    if (active) {
-        if (active === prev[0]) return;
+    if (active.length) {
+        if (active[active.length-1] === prev[0]) return;
         while (prev.length) prev[0].classList.remove('activeSection');
-        active.classList.add('activeSection');
+        active[active.length - 1].classList.add('activeSection');
     } else {
         while (prev.length) prev[0].classList.remove('activeSection');
     }
