@@ -69,10 +69,10 @@ function mark () {
     });
 
     const prev = document.getElementsByClassName('activeSection');
-    const vid = document.getElementsByClassName('vid')[0];
 
 
     if (active.length) {
+        const vid = document.getElementsByClassName('vid')[0];
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
             vid.play();
