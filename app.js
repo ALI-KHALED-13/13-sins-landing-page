@@ -3,7 +3,7 @@ let header = document.getElementsByTagName('header')[0];
 
 window.onload =()=> {
     document.getElementById('preloading').remove();
-    Const vid = document.getElementsByClassName('vid')[0];
+    const vid = document.getElementsByClassName('vid')[0];
     vid.muted = false;
     popup();
 };
