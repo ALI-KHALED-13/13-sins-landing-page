@@ -71,7 +71,7 @@ function mark () {
     });
 
     const prev = document.getElementsByClassName('activeSection');
-    Const vid = document.getElementsByClassName('vid')[0];
+    const vid = document.getElementsByClassName('vid')[0];
 
     if (active.length) {
         if (active[active.length-1] === prev[0]) return;
