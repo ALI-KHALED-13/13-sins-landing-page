@@ -74,8 +74,8 @@ function mark () {
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
             const vid = document.getElementsByClassName('vid')[0];
+            vid.play();
             if (!vid.played.length){
-                vid.play();
                 vid.muted = false;
                 vid.onended =()=> {
                     vid.muted = true;
