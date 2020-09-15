@@ -10,6 +10,7 @@ setInterval(hideNav, 200);
 
 insertNav();
 
+Array.from(nav.children).forEach(li=> li.onmousedown =()=> false);
 nav.addEventListener('click', scrollSection);
 
 function insertNav(){
