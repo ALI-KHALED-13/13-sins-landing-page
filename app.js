@@ -3,8 +3,6 @@ let header = document.getElementsByTagName('header')[0];
 
 window.onload =()=> {
     document.getElementById('preloading').remove();
-    const vid = document.getElementsByClassName('vid')[0];
-    vid.muted = false;
     popup();
 };
 
@@ -71,17 +69,20 @@ function mark () {
     });
 
     const prev = document.getElementsByClassName('activeSection');
-    const vid = document.getElementsByClassName('vid')[0];
 
     if (active.length) {
         if (active[active.length-1] === prev[0]) return;
         if (active[active.length-1].id == 'vidglance') {
-            vid.play();
-            vid.onended =()=> {
-                vid.muted = true;
+            const vid = document.getElementsByClassName('vid')[0];
+            if (!vid.played.length){
+                vid.muted = false;
                 vid.play();
-                vid.loop = true;
-        }
+                vid.onended =()=> {
+                    vid.muted = true;
+                    vid.play();
+                    vid.loop = true;
+                }
+           }
         }
         while (prev.length) {
             prev[0].classList.remove('activeSection');
