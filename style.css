@@ -13,7 +13,7 @@
     font-size: 2vw;
     text-align: center;
 }
-p::selection {background-color: rgba(192, 77, 77, 0.452);}
+::selection {background-color: rgba(192, 77, 77, 0.452);}
 
 /*scroll bar optimization*/
 ::-webkit-scrollbar {
